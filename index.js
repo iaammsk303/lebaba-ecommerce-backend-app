@@ -14,7 +14,11 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(cors({
-    origin: ['https://lebaba-frontend-final-lime.vercel.app', 'https://lebaba-ecommerce-backend-app-eta.vercel.app'],
+    origin: [
+        'https://lebaba-frontend-final-lime.vercel.app', 
+        'https://lebaba-ecommerce-backend-app-eta.vercel.app',
+        'https://lebaba-frontend-final-fdvqfyq5s-mohammed-saadiq-k-hans-projects.vercel.app'
+    ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
