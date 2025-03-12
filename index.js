@@ -14,7 +14,11 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(cors({
-    origin: 'https://lebaba-frontend-final-sdk8.vercel.app',
+    origin: [
+        'https://lebaba-frontend-final-lime.vercel.app', 
+        'https://lebaba-ecommerce-backend-app-eta.vercel.app',
+        'https://lebaba-frontend-final-sdk8.vercel.app'
+    ],
     credentials: true
 }))
 
@@ -34,20 +38,18 @@ app.use("/api/reviews", reviewRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/stats', statsRoutes)
 
-
-
 main()
   .then(() => console.log("mongodb is successfully connected."))
   .catch((err) => console.log(err));
 
-  async function main() {
-    try {
-      await mongoose.connect(process.env.DB_URL);
-      console.log("MongoDB is successfully connected.");
-    } catch (error) {
-      console.error("MongoDB connection error:", error);
-    }
+async function main() {
+  try {
+    await mongoose.connect(process.env.DB_URL);
+    console.log("MongoDB is successfully connected.");
+  } catch (error) {
+    console.error("MongoDB connection error:", error);
   }
+}
 
 app.post("/uploadImage", (req, res) => {
   uploadImage(req.body.image)
