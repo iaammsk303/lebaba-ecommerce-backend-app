@@ -42,7 +42,7 @@ main()
 
   async function main() {
     try {
-      await mongoose.connect(process.env.DB_URL);
+      await mongoose.connect("mongodb+srv://msaadiqkhan2004:<db_password>@cluster0.3oh6w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
       console.log("MongoDB is successfully connected.");
     } catch (error) {
       console.error("MongoDB connection error:", error);
