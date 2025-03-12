@@ -40,13 +40,14 @@ main()
   .then(() => console.log("mongodb is successfully connected."))
   .catch((err) => console.log(err));
 
-async function main() {
-  await mongoose.connect(process.env.DB_URL);
-
-  app.get("/", (req, res) => {
-    res.send("Lebaba E-commerce Server is running....!");
-  });
-}
+  async function main() {
+    try {
+      await mongoose.connect(process.env.DB_URL);
+      console.log("MongoDB is successfully connected.");
+    } catch (error) {
+      console.error("MongoDB connection error:", error);
+    }
+  }
 
 app.post("/uploadImage", (req, res) => {
   uploadImage(req.body.image)
