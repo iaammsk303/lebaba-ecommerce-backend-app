@@ -17,7 +17,8 @@ app.use(cors({
     origin: [
         'https://lebaba-frontend-final-lime.vercel.app', 
         'https://lebaba-ecommerce-backend-app-eta.vercel.app',
-        'https://lebaba-frontend-final-sdk8.vercel.app'
+        'https://lebaba-frontend-final-sdk8.vercel.app',
+        'https://lebaba-frontend-final-fvy349ys8-mohammed-saadiq-k-hans-projects.vercel.app' // new frontend link
     ],
     credentials: true
 }))
