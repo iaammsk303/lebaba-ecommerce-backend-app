@@ -45,7 +45,8 @@ main()
 
 async function main() {
   try {
-    await mongoose.connect(process.env.DB_URL);
+    await mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+    mongoose.connection.db.collection('admin'); // use the 'admin' collection
     console.log("MongoDB is successfully connected.");
   } catch (error) {
     console.error("MongoDB connection error:", error);
